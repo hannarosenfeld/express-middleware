@@ -1,6 +1,17 @@
 const express = require('express');
 const app = express();
 
+require('express-async-errors');
+//const User = require('./models/user');
+
+// app.get('/users', async (req, res) => {
+//   const users = await User.findAll();
+//   res.send(users);
+// });
+
+// import static files
+app.use(express.static('assets'));
+
 // For testing purposes, GET /
 app.get('/', (req, res) => {
   res.json("Express server running. No content provided at root level. Please use another route.");
